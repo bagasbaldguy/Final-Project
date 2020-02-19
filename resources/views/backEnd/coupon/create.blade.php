@@ -1,7 +1,7 @@
 @extends('backEnd.layouts.master')
 @section('title','Add Coupons Page')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('coupon.index')}}">Coupons</a> <a href="{{route('coupon.create')}}" class="current">Add New Coupon</a> </div>
+    <div id="breadcrumb" style="padding: 3px;"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('coupon.index')}}">Coupons</a> <a href="{{route('coupon.create')}}" class="current">Add New Coupon</a> </div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">

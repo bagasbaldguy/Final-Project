@@ -71,6 +71,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
     /// Product Images Gallery
     Route::resource('/image-gallery','ImagesController');
     Route::get('delete-imageGallery/{id}','ImagesController@destroy');
+    /// Orders Area
+    Route::resource('/orders','OrdersInvoicesController');
+    Route::get('delete-orders/{id}','OrdersInvoicesController@destroy');
     /// ///////// Coupons Area //////////
     Route::resource('/coupon','CouponController');
     Route::get('delete-coupon/{id}','CouponController@destroy');

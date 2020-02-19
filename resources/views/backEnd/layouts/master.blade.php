@@ -19,6 +19,26 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<style>
+.header {
+  padding: 10px;
+  text-align: left;
+  background: #2E363F;
+  color: white;
+  font-size: 20px;
+}
+.footer {
+   padding: 10px;
+   background-color: #2E363F;
+   color: white;
+   text-align: center;
+   border-style: solid;
+   border-color: grey;
+}
+.textfoot {
+   font-size: 15px;
+}
+</style>
 
 @include('backEnd.layouts.header')
 @include('backEnd.layouts.nav')

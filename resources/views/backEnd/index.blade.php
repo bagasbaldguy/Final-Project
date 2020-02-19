@@ -1,14 +1,10 @@
 @extends('backEnd.layouts.master')
 @section('title','Dashboard')
 @section('content')
-    <!--breadcrumbs-->
-    <div id="content-header">
-        <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-    </div>
-    <!--End-breadcrumbs-->
+    <div id="breadcrumb" style="padding: 3px;"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
 
     <!--Action boxes-->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="quick-actions_homepage">
             <ul class="quick-actions">
                 <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
@@ -25,6 +21,7 @@
             </ul>
         </div>
     </div>
+     -->
 @endsection
 @section('jsblock')
     <script src="{{asset('js/excanvas.min.js')}}"></script>

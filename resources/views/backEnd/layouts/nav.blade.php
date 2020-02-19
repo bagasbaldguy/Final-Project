@@ -20,6 +20,28 @@
                 <li><a href="{{route('coupon.index')}}">List Coupons</a></li>
             </ul>
         </li>
+        <li class="submenu {{$menu_active==5? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>Orders</span></a>
+            <ul>
+                <li><a href="{{route('orders.index')}}">List Orders</a></li>
+            </ul>
+        </li>
+         <li class="submenu {{$menu_active==6? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>More</span></a>
+            <ul>
+                <li class=""><a title="" href="{{url('/admin/settings')}}"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+                <li class="">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                        <i class="icon icon-share-alt"></i>{{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
 <!--sidebar-menu-->

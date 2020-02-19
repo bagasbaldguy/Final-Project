@@ -1,11 +1,8 @@
 @extends('backEnd.layouts.master')
 @section('title','Setting')
 @section('content')
-    <!--breadcrumbs-->
-    <div id="content-header">
-        <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Setting</a> </div>
-    </div>
-    <!--End-breadcrumbs-->
+    <div id="breadcrumb" style="padding: 3px;"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="#" class="current">Setting</a></div>
+
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">

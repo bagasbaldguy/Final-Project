@@ -18,6 +18,7 @@
     <script src="{{asset('frontEnd/js/respond.min.js')}}"></script>
     <![endif]-->
     <link rel="stylesheet" href="{{asset('easyzoom/css/easyzoom.css')}}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head><!--/head-->
 
 <body>
