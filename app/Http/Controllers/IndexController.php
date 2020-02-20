@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $products=Products_model::all();
+        $products=Products_model::paginate(3);
         return view('frontEnd.index',compact('products'));
     }
     public function shop(){

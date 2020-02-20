@@ -28,7 +28,8 @@
                             @endif
                         @endforeach
                     </div><!--features_items-->
-
+                    <br>
+                    {{ $products->links() }}
                 </div>
             </div>
         </div>
