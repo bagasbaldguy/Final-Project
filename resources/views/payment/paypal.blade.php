@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h3 class="text-center">YOUR ORDER HAS BEEN PLACED</h3>
-        <p class="text-center">Your order number is <b>{{$who_buying->id}}</b> and total payment is <b>$ {{$who_buying->grand_total}}</b> </p>
+        <p class="text-center">Your order number is <b>{{$who_buying->id}}</b> and total payment is <b>Rp.{{$who_buying->grand_total}}</b> </p>
         <p class="text-center">Please make payment by clicking on below Payment Button</p>
 
         <div class="text-center">

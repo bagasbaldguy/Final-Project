@@ -17,10 +17,6 @@
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="email" placeholder="Email" name="email"/>
                         <input type="password" placeholder="Password" name="password"/>
-                        <span>
-                            <input type="checkbox" class="checkbox">
-                            Keep me signed in
-                        </span>
                         <button type="submit" class="btn btn-default">Login</button>
                     </form>
                 </div><!--/login form-->

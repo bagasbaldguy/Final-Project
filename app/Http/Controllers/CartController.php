@@ -30,7 +30,7 @@ class CartController extends Controller
             $stockAvailable=DB::table('product_att')->select('stock','sku')->where(['products_id'=>$inputToCart['products_id'],
                 'price'=>$inputToCart['price']])->first();
             if($stockAvailable->stock>=$inputToCart['quantity']){
-                $inputToCart['user_email']='weshare@gmail.com';
+                $inputToCart['user_email']='bagas@gmail.com';
                 $session_id=Session::get('session_id');
                 if(empty($session_id)){
                     $session_id=str_random(40);

@@ -20,9 +20,9 @@ class CreateOrdersTable extends Migration
             $table->string('name',100);
             $table->string('address');
             $table->string('city',100);
-            $table->string('state',100);
-            $table->string('pincode',100);
-            $table->string('country',100);
+            // $table->string('state',100);
+            // $table->string('pincode',100);
+            $table->string('province');
             $table->string('mobile',100);
             $table->float('shipping_charges');
             $table->string('coupon_code',100);

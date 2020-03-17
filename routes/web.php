@@ -37,11 +37,22 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
     Route::put('/update-profile/{id}','UsersController@updateprofile');
     Route::put('/update-password/{id}','UsersController@updatepassword');
     Route::get('/check-out','CheckOutController@index');
+    Route::get('/provinsi/{id}/kota', 'CheckOutController@getKota');
+    Route::post('/test-submit', 'CheckOutController@submit');
     Route::post('/submit-checkout','CheckOutController@submitcheckout');
     Route::get('/order-review','OrdersController@index');
     Route::post('/submit-order','OrdersController@order');
     Route::get('/cod','OrdersController@cod');
-    Route::get('/paypal','OrdersController@paypal');
+    // Route::get('/paypal','OrdersController@paypal');
+
+    //Laravel Mid Trans Payment
+    // Route::get('/', 'DonationController@index')->name('welcome');
+    Route::post('/finish', function(){
+        return redirect()->route('welcome');
+    })->name('transaction.finish');
+    
+    Route::post('/transaction/store', 'TransactionController@submitTransaction')->name('transaction.store');
+    Route::post('/notification/handler', 'TransactionController@notificationHandler')->name('notification.handler');
 });
 ///
 

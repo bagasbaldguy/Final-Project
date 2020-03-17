@@ -27,16 +27,14 @@ class OrdersController extends Controller
         Orders_model::create($input_data);
         if($payment_method=="COD"){
             return redirect('/cod');
-        }else{
-            return redirect('/paypal');
         }
     }
     public function cod(){
         $user_order=Orders_model::where('users_id',Auth::id())->first();
         return view('payment.cod',compact('user_order'));
     }
-    public function paypal(Request $request){
-        $who_buying=Orders_model::where('users_id',Auth::id())->first();
-        return view('payment.paypal',compact('who_buying'));
-    }
+    // public function paypal(Request $request){
+    //     $who_buying=Orders_model::where('users_id',Auth::id())->first();
+    //     return view('payment.paypal',compact('who_buying'));
+    // }
 }

@@ -28,21 +28,21 @@
                             <input type="text" class="form-control" name="city" value="{{$user_login->city}}" id="city" placeholder="City">
                             <span class="text-danger">{{$errors->first('city')}}</span>
                         </div>
-                        <div class="form-group {{$errors->has('state')?'has-error':''}}">
+                        <!-- <div class="form-group {{$errors->has('state')?'has-error':''}}">
                             <input type="text" class="form-control" name="state" value="{{$user_login->state}}" id="state" placeholder="State">
                             <span class="text-danger">{{$errors->first('state')}}</span>
-                        </div>
+                        </div> -->
                         <div class="form-group">
-                            <select name="country" id="country" class="form-control">
-                                @foreach($countries as $country)
-                                    <option value="{{$country->country_name}}" {{$user_login->country==$country->country_name?' selected':''}}>{{$country->country_name}}</option>
+                            <select name="province" id="province" class="form-control">
+                                @foreach($provinces as $province)
+                                    <option value="{{$province->province_name}}" {{$user_login->province==$province->province_name?' selected':''}}>{{$province->province_name}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group {{$errors->has('pincode')?'has-error':''}}">
+                        <!-- <div class="form-group {{$errors->has('pincode')?'has-error':''}}">
                             <input type="text" class="form-control" name="pincode" value="{{$user_login->pincode}}" id="pincode" placeholder="Pincode">
                             <span class="text-danger">{{$errors->first('pincode')}}</span>
-                        </div>
+                        </div> -->
                         <div class="form-group {{$errors->has('mobile')?'has-error':''}}">
                             <input type="text" class="form-control" name="mobile" value="{{$user_login->mobile}}" id="mobile" placeholder="Mobile">
                             <span class="text-danger">{{$errors->first('mobile')}}</span>

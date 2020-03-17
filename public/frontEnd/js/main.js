@@ -62,24 +62,41 @@ $(document).ready(function () {
         newImage = $(this).attr('src');
         $("#dynamicImage").attr('src', newImage);
     });
-    ///// Copy Billing address to Shipping Address
+    /// Copy Billing address to Shipping Address
     $("#checkme").click(function () {
         if (this.checked) {
             $("#shipping_name").val($("#billing_name").val());
             $("#shipping_address").val($("#billing_address").val());
             $("#shipping_city").val($("#billing_city").val());
-            $("#shipping_state").val($("#billing_state").val());
-            $("#shipping_country").val($("#billing_country").val());
-            $("#shipping_pincode").val($("#billing_pincode").val());
+            // $("#shipping_state").val($("#billing_state").val());
+            $("#shipping_province").val($("#billing_province").val());
+            // $("#shipping_pincode").val($("#billing_pincode").val());
             $("#shipping_mobile").val($("#billing_mobile").val());
         } else {
             $("#shipping_name").val("");
             $("#shipping_address").val("");
             $("#shipping_city").val("");
-            $("#shipping_state").val("");
-            $("#shipping_country").val("Albania");
-            $("#shipping_pincode").val("");
+            // $("#shipping_state").val("");
+            $("#shipping_province").val("Aceh");
+            // $("#shipping_pincode").val("");
             $("#shipping_mobile").val("");
         }
     });
+
+    //Shipping Charges
+    // var priceMaterial = document.getElementById("price_material");
+
+    // document.getElementById("materials").addEventListener('change', function () {
+    //     var selected = this.options[this.selectedIndex];
+    //     var txt = selected.dataset.price;
+    //     priceMaterial.innerText = ('Rp.' + txt);
+    // });
+
+    //Shipping Charges
+    // $(document).ready(function () {
+    //     $('#materials').change(function () {
+    //         var value = $('#materials').find(":selected").attr('data-price');
+    //         $('#price_material').text(value);
+    //     });
+    // });
 });

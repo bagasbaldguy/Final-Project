@@ -41,24 +41,24 @@ class UsersController extends Controller
         return redirect('/');
     }
     public function account(){
-        $countries=DB::table('countries')->get();
+        $provinces=DB::table('provinces')->get();
         $user_login=User::where('id',Auth::id())->first();
-        return view('users.account',compact('countries','user_login'));
+        return view('users.account',compact('provinces','user_login'));
     }
     public function updateprofile(Request $request,$id){
         $this->validate($request,[
             'address'=>'required',
             'city'=>'required',
-            'state'=>'required',
+            // 'state'=>'required',
             'mobile'=>'required',
         ]);
         $input_data=$request->all();
         DB::table('users')->where('id',$id)->update(['name'=>$input_data['name'],
             'address'=>$input_data['address'],
             'city'=>$input_data['city'],
-            'state'=>$input_data['state'],
-            'country'=>$input_data['country'],
-            'pincode'=>$input_data['pincode'],
+            // 'state'=>$input_data['state'],
+            'province'=>$input_data['province'],
+            // 'pincode'=>$input_data['pincode'],
             'mobile'=>$input_data['mobile']]);
         return back()->with('message','Update Profile already!');
 
@@ -68,7 +68,7 @@ class UsersController extends Controller
         $input_data=$request->all();
         if(Hash::check($input_data['password'],$oldPassword->password)){
             $this->validate($request,[
-               'newPassword'=>'required|min:6|max:12|confirmed'
+               'newPassword'=>'required|min:6|confirmed'
             ]);
             $new_pass=Hash::make($input_data['newPassword']);
             User::where('id',$id)->update(['password'=>$new_pass]);
