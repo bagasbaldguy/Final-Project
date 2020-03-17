@@ -51,6 +51,15 @@ class TransactionController extends Controller
                 ];
             }
 
+            $ongkir = [
+                'id' => null,
+                'price' => floatval($this->request->ongkir),
+                'quantity' => 1,
+                'name' => 'Charges'
+            ];
+
+            array_push($item, $ongkir);
+
             // Buat transaksi ke midtrans kemudian save snap tokennya.
             $payload = [
                 'transaction_details' => [

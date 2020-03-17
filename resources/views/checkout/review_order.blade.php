@@ -29,7 +29,8 @@
                 @else
                     <input type="hidden" name="coupon_code" value="NO Coupon">
                     <input type="hidden" name="coupon_amount" value="0">
-                    <input type="hidden" id="subtotal" name="grand_total" value="{{$total_price}}">
+                    <input type="hidden" id="ongkir" name="ongkir" value="{{Session::get('data')}}">
+                    <input type="hidden" id="subtotal" name="grand_total" value="{{$total_price+Session::get('data')}}">
                 @endif
 
                 <div class="col-sm-12">
@@ -173,6 +174,7 @@
         {
             _method: 'POST',
             _token: '{{ csrf_token() }}',
+            ongkir: $('#ongkir').val(),
             subtotal: $('#subtotal').val(),
             name_customer: $('#name').val(),
             phone_customer: $('#mobile').val(),
