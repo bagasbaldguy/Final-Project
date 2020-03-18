@@ -1,22 +1,25 @@
 /*price range*/
 
-$('#sl2').slider();
+$("#sl2").slider();
 
-var RGBChange = function () {
-    $('#RGB').css('background', 'rgb(' + r.getValue() + ',' + g.getValue() + ',' + b.getValue() + ')')
+var RGBChange = function() {
+    $("#RGB").css(
+        "background",
+        "rgb(" + r.getValue() + "," + g.getValue() + "," + b.getValue() + ")"
+    );
 };
 
 /*scroll to top*/
 
-$(document).ready(function () {
-    $(function () {
+$(document).ready(function() {
+    $(function() {
         $.scrollUp({
-            scrollName: 'scrollUp', // Element ID
+            scrollName: "scrollUp", // Element ID
             scrollDistance: 300, // Distance from top/bottom before showing element (px)
-            scrollFrom: 'top', // 'top' or 'bottom'
+            scrollFrom: "top", // 'top' or 'bottom'
             scrollSpeed: 300, // Speed back to top (ms)
-            easingType: 'linear', // Scroll to top easing (see http://easings.net/)
-            animation: 'fade', // Fade, slide, none
+            easingType: "linear", // Scroll to top easing (see http://easings.net/)
+            animation: "fade", // Fade, slide, none
             animationSpeed: 200, // Animation in speed (ms)
             scrollTrigger: false, // Set a custom triggering element. Can be an HTML string or jQuery object
             //scrollTarget: false, // Set a custom target element for scrolling to the top
@@ -28,18 +31,18 @@ $(document).ready(function () {
         });
     });
     ///////////Size of Product
-    $("#idSize").change(function () {
+    $("#idSize").change(function() {
         var SizeAttr = $(this).val();
         if (SizeAttr != "") {
             $.ajax({
-                type: 'get',
-                url: '/get-product-attr',
+                type: "get",
+                url: "/get-product-attr",
                 data: {
                     size: SizeAttr
                 },
-                success: function (resp) {
+                success: function(resp) {
                     var arr = resp.split("#");
-                    $("#dynamic_price").html('Rp.' + arr[0]);
+                    $("#dynamic_price").html("Rp." + arr[0]);
                     $("#dynamicPriceInput").val(arr[0]);
                     if (arr[1] == 0) {
                         $("#buttonAddToCart").hide();
@@ -51,19 +54,19 @@ $(document).ready(function () {
                         $("#inputStock").val(arr[1]);
                     }
                 },
-                error: function () {
+                error: function() {
                     alert("Error Select Size");
                 }
             });
         }
     });
     ///////////// Thumnail Image
-    $(".changeImage").click(function () {
-        newImage = $(this).attr('src');
-        $("#dynamicImage").attr('src', newImage);
+    $(".changeImage").click(function() {
+        newImage = $(this).attr("src");
+        $("#dynamicImage").attr("src", newImage);
     });
     /// Copy Billing address to Shipping Address
-    $("#checkme").click(function () {
+    $("#checkme").click(function() {
         if (this.checked) {
             $("#shipping_name").val($("#billing_name").val());
             $("#shipping_address").val($("#billing_address").val());

@@ -20,7 +20,7 @@
                 <input type="hidden" name="pincode" value="{{$shipping_address->pincode}}"> -->
                 <input type="hidden" name="province" value="{{$shipping_address->province}}">
                 <input type="hidden" id="mobile" name="mobile" value="{{$shipping_address->mobile}}">
-                <!-- <input type="hidden" name="shipping_charges" value="0"> -->
+                <input type="hidden" name="shipping_charges" value="0">
                 <input type="hidden" name="order_status" value="success">
                 @if(Session::has('discount_amount_price'))
                     <input type="hidden" name="coupon_code" value="{{Session::get('coupon_code')}}">

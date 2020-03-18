@@ -79,22 +79,61 @@
             </div>
         </div><!--/product-details-->
 
-        <!--category-tab-->
-
-        <!-- <div class="category-tab shop-details-tab" style="border-color: orange;">
+       <div class="category-tab shop-details-tab"><!--category-tab-->
             <div class="col-sm-12">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#details" data-toggle="tab">Description</a></li>
+                    <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+                    <li><a href="#reviews" data-toggle="tab">Reviews</a></li>
                 </ul>
             </div>
             <div class="tab-content">
-                <div class="tab-pane fade active in" id="details">
+                <div class="tab-pane fade active in" id="details" >
                     {!! $detail_product->description !!}
                 </div>
-            </div>
-        </div> -->
 
-        <!--/category-tab-->
+                 <div class="tab-pane fade" id="reviews" >
+                    <div class="col-sm-12">
+                       <div id="disqus_thread"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div><!--/category-tab-->
+
+        <div class="recommended_items"><!--recommended_items-->
+            <h2 class="title text-center">recommended items</h2>
+
+            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <?php $countChunk=0;?>
+                    @foreach($relateProducts->chunk(3) as $chunk)
+                        <?php $countChunk++; ?>
+                        <div class="item<?php if($countChunk==1){ echo' active';} ?>">
+                            @foreach($chunk as $item)
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="{{url('/products/small',$item->image)}}" alt="" style="width: 150px;"/>
+                                                <h2>{{$item->price}}</h2>
+                                                <p>{{$item->p_name}}</p>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div><!--/recommended_items-->
 
     </div>
         </div>

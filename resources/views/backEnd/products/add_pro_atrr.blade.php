@@ -34,6 +34,7 @@
                                             <input type="text" class="form-control" name="price" value="{{old('price')}}" id="price" placeholder="Price" required>
                                             <span style="color: red;">{{$errors->first('price')}}</span>
                                             <input type="number" class="form-control" name="stock" value="{{old('stock')}}" id="stock" placeholder="Stock" required>
+                                            <!-- <input type="number" class="form-control" name="weight" value="{{old('weight')}}" id="weight" placeholder="Weight" required> -->
                                         </div>
                                         <button type="submit" class="btn btn-success">Add</button>
                                     </form>
@@ -58,6 +59,7 @@
                                     <th>Size</th>
                                     <th>Price</th>
                                     <th>Stock</th>
+                                    <!-- <th>Weight</th> -->
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -77,6 +79,9 @@
                                     <td class="taskOptions">
                                         <input type="text" name="stock[]" id="stock" class="form-control" value="{{$attribute->stock}}" required="required" style="width: 75px;">
                                     </td>
+                                    <!-- <td class="taskOptions">
+                                        <input type="text" name="weight[]" id="weight" class="form-control" value="{{$attribute->weight}}" required="required" style="width: 75px;">
+                                    </td> -->
                                     <td style="text-align: center; ">
                                         <button type="submit" class="btn btn-success btn-mini">Edit</button>
                                         <a href="javascript:" rel="{{$attribute->id}}" rel1="delete-attribute" class="btn btn-danger btn-mini deleteRecord">Delete</a>

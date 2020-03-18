@@ -39,7 +39,9 @@ class ProductAtrrController extends Controller
             'sku'=>'required',
             'size'=>'required',
             'price'=>'required',
-            'stock'=>'required|numeric'
+            'stock'=>'required|numeric',
+            // 'weight'=>'required'
+
         ]);
         ProductAtrr_model::create($request->all());
         return back()->with('message','Add Attribute Successed');
@@ -83,7 +85,9 @@ class ProductAtrrController extends Controller
         foreach ($request_data['id'] as $key=>$attr){
             $update_attr=ProductAtrr_model::where([['products_id',$id],['id',$request_data['id'][$key]]])
                 ->update(['sku'=>$request_data['sku'][$key],'size'=>$request_data['size'][$key],'price'=>$request_data['price'][$key],
-                    'stock'=>$request_data['stock'][$key]]);
+                    'stock'=>$request_data['stock'][$key],
+                    // 'weight'=>$request_data['weight'][$key]
+                    ]);
         }
         return back()->with('message','Update Attribute Successed');
     }
