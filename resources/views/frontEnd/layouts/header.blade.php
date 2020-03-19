@@ -40,12 +40,23 @@
                     </div>
                     <div class="mainmenu pull-left" style="margin-left: 80px;">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{url('/')}}" class="active">Home</a></li>
-                            <li><a href="{{url('/list-products')}}">Products</a></li>
-                            <li><a href="{{url('/myaccount')}}">Account</a></li>
-                            <li><a href="{{url('/viewcart')}}">Cart</a></li>
+                            <li><a href="{{url('/')}}"><h4>Home</h4></a></li>
+                            <li><a href="{{url('/list-products')}}"><h4>Products</h4></a></li>
+                            <li><a href="{{url('/myaccount')}}"><h4>Account</h4></a></li>
+                            <li><a href="{{url('/viewcart')}}"><h4>Cart</h4></a></li>
                         </ul>
                     </div>
+                    <form action="{{URL::to('/search')}}" method="POST" role="search">
+                        {{ csrf_field() }}
+                        <div class="input-group" style="width:300px; margin-left:840px; margin-bottom:20px;">
+                            <input type="text" class="form-control" name="products" 
+                                placeholder="Search Products"> <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

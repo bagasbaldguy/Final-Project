@@ -43,6 +43,7 @@ class CheckOutController extends Controller
         //    'shipping_pincode'=>'required',
            'shipping_mobile'=>'required',
        ]);
+
         $input_data=$request->all();
        $count_shippingaddress=DB::table('delivery_address')->where('users_id',Auth::id())->count();
        if($count_shippingaddress==1){

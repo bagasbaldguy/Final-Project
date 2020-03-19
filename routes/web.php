@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+use App\Products_model;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,16 @@
 /* FrontEnd Location */
 Route::get('/','IndexController@index');
 Route::get('/list-products','IndexController@shop');
+Route::post('/search', function(){
+    $products = Input::get('products');
+    if($products != ""){
+        $productResults = Products_model::where('p_name', 'LIKE', '%' . $products . '%')
+                                            ->get();
+        if(count ($productResults) > 0)
+            return view('frontEnd.product_results')->withDetails($productResults)->withQuery($products);
+        }
+        return view('frontEnd.product_results')->withMessage('No Products Found');
+});
 Route::get('/cat/{id}','IndexController@listByCat')->name('cats');
 Route::get('/product-detail/{id}','IndexController@detialpro');
 ////// get Attribute ////////////

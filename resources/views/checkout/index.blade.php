@@ -100,26 +100,28 @@
                 <div class="col-sm-3 col-sm-offset-1">
                     <div class="signup-form"><!--sign up form-->
                         <legend>Shipping Charges</legend>
-                         <div class="form-group">
+                         <div class="form-group {{$errors->has('provinsi_asal')?'has-error':''}}">
                             <select name="provinsi_asal" id="provinsi_asal" class="form-control">
                                 <option selected disabled>--Provinsi Asal--</option>
                                 @foreach($provinsi as $provinsis => $value)
                                     <option value="{{ $provinsis }}">{{ $value }}</option>
                                 @endforeach
                             </select>
+                            <span class="text-danger">{{$errors->first('provinsi_asal')}}</span>
                         </div>
                         <div class="form-group">
                             <select name="kota_asal" id="kota_asal" class="form-control">
                                 <option value="kota_asal">--Kota Asal--</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group {{$errors->has('provinsi_tujuan')?'has-error':''}}">
                             <select name="provinsi_tujuan" id="provinsi_tujuan" class="form-control">
                                 <option selected disabled>--Provinsi Tujuan--</option>
                                 @foreach($provinsi as $provinsis => $value)
                                     <option value="{{ $provinsis }}">{{ $value }}</option>
                                 @endforeach
                             </select>
+                            <span class="text-danger">{{$errors->first('provinsi_tujuan')}}</span>
                         </div>
                         <div class="form-group">
                             <select name="kota_tujuan" id="kota_tujuan" class="form-control">
@@ -129,6 +131,7 @@
                         <div class="form-group">
                             <select name="kurir" id="kurir" class="form-control">
                                 <label for="">--Kurir--</label>
+                                    <option selected disabled>Select Shipping Service</option>
                                 @foreach($courier as $couriers => $value)
                                     <option value="{{ $couriers }}">{{ $value }}</option>
                                 @endforeach
