@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\OrdersMidTrans;
 use Veritrans_Config;
 use Veritrans_Snap;
@@ -31,12 +32,16 @@ class TransactionController extends Controller
             //get data cart
             $cart = DB::select('SELECT products_id,product_name,product_code,product_color,size,price,quantity,user_email FROM cart');
             
+            //get session 
+            $session_id=Session::get('session_id');
+
             // Save order ke database
             $order = OrdersMidTrans::create([
                 'name_customer' => $this->request->name_customer,
                 'phone_customer' => $this->request->phone_customer,
                 'address_customer' => $this->request->address_customer,
                 'subtotal' => floatval($this->request->subtotal),
+                'session_id' => $session_id,
             ]);
             
             // Array List Products
@@ -51,6 +56,13 @@ class TransactionController extends Controller
                 ];
             }
 
+            $discount = [
+                'id' => null,
+                'price' => floatval($this->request->discount*-1),
+                'quantity' => 1,
+                'name' => 'Discount Amount'
+            ];
+
             $ongkir = [
                 'id' => null,
                 'price' => floatval($this->request->ongkir),
@@ -58,7 +70,7 @@ class TransactionController extends Controller
                 'name' => 'Charges'
             ];
 
-            array_push($item, $ongkir);
+            array_push($item, $discount, $ongkir);
 
             // Buat transaksi ke midtrans kemudian save snap tokennya.
             $payload = [

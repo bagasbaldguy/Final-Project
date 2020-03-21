@@ -24,11 +24,12 @@
                 <input type="hidden" name="order_status" value="success">
                 @if(Session::has('discount_amount_price'))
                     <input type="hidden" name="coupon_code" value="{{Session::get('coupon_code')}}">
-                    <input type="hidden" name="coupon_amount" value="{{Session::get('discount_amount_price')}}">
-                    <input type="hidden" name="grand_total" value="{{$total_price-Session::get('discount_amount_price')}}">
+                    <input type="hidden" id="discount" name="coupon_amount" value="{{Session::get('discount_amount_price')}}">
+                    <input type="hidden" id="ongkir" name="ongkir" value="{{Session::get('data')}}">
+                    <input type="hidden" id="subtotal" name="grand_total" value="{{$total_price-Session::get('discount_amount_price')+Session::get('data')}}">
                 @else
                     <input type="hidden" name="coupon_code" value="NO Coupon">
-                    <input type="hidden" name="coupon_amount" value="0">
+                    <input type="hidden" id="discount" name="coupon_amount" value="0">
                     <input type="hidden" id="ongkir" name="ongkir" value="{{Session::get('data')}}">
                     <input type="hidden" id="subtotal" name="grand_total" value="{{$total_price+Session::get('data')}}">
                 @endif
@@ -108,6 +109,8 @@
                                             <tr>
                                                 <td>Cart Sub Total</td>
                                                 <td>Rp.{{$total_price}}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>Shipping Charges</td>
                                                 <td>Rp.{{ Session::get('data') }}</td>
                                             </tr>
@@ -118,7 +121,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Total</td>
-                                                    <td><span>Rp.{{$total_price-Session::get('discount_amount_price')}}</span></td>
+                                                    <td><span>Rp.{{$total_price-Session::get('discount_amount_price')+Session::get('data')}}</span></td>
                                                 </tr>
                                             @else
                                                 <tr>
@@ -174,6 +177,7 @@
         {
             _method: 'POST',
             _token: '{{ csrf_token() }}',
+            discount: $('#discount').val(),
             ongkir: $('#ongkir').val(),
             subtotal: $('#subtotal').val(),
             name_customer: $('#name').val(),

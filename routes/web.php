@@ -35,7 +35,6 @@ Route::post('/addToCart','CartController@addToCart')->name('addToCart');
 Route::get('/viewcart','CartController@index');
 Route::get('/cart/deleteItem/{id}','CartController@deleteItem');
 Route::get('/cart/update-quantity/{id}/{quantity}','CartController@updateQuantity');
-/////////////////////////
 /// Apply Coupon Code
 Route::post('/apply-coupon','CouponController@applycoupon');
 /// Simple User Login /////
@@ -47,6 +46,8 @@ Route::get('/logout','UsersController@logout');
 ////// User Authentications ///////////
 Route::group(['middleware'=>'FrontLogin_middleware'],function (){
     Route::get('/myaccount','UsersController@account');
+    Route::get('/vieworder','YouOrderController@index');
+    Route::get('/order/deleteOrder/{id}','YouOrderController@deleteOrder');
     Route::put('/update-profile/{id}','UsersController@updateprofile');
     Route::put('/update-password/{id}','UsersController@updatepassword');
     Route::get('/check-out','CheckOutController@index');
@@ -68,9 +69,6 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
     Route::post('/notification/handler', 'TransactionController@notificationHandler')->name('notification.handler');
 });
 ///
-
-
-
 
 /* Admin Location */
 Auth::routes(['register'=>false]);

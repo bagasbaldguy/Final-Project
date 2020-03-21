@@ -44,6 +44,9 @@
                             <li><a href="{{url('/list-products')}}"><h4>Products</h4></a></li>
                             <li><a href="{{url('/myaccount')}}"><h4>Account</h4></a></li>
                             <li><a href="{{url('/viewcart')}}"><h4>Cart</h4></a></li>
+                            @if(Auth::check())
+                                <li><a href="{{url('/vieworder')}}"><h4>Order</h4></a></li>
+                            @endif
                         </ul>
                     </div>
                     <form action="{{URL::to('/search')}}" method="POST" role="search">

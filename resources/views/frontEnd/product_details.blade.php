@@ -65,13 +65,13 @@
                             </button>
                             @endif
                         </span>
-                        <!-- <p><b>Availability:</b>
+                        <p><b>Availability:</b>
                             @if($totalStock>0)
                                 <span id="availableStock">In Stock</span>
                             @else
                                 <span id="availableStock">Out of Stock</span>
                             @endif
-                        </p> -->
+                        </p>
 
                     </div><!--/product-information-->
                 </form>

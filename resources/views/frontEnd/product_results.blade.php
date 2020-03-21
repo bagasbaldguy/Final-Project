@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <p>The Search Results for Your Query <b> {{ $query }} </b> are : </p>
+            <p>The Search Results for Your Products <b> {{ $query }} </b> are : </p>
         </div>
         <div class="col-sm-9 padding-right">
             <div class="features_items"><!--features_items-->

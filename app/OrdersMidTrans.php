@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrdersMidTrans extends Model
 {
-    protected $fillable = ['invoice', 'id_customer', 'name_customer', 'phone_customer', 'address_customer', 'subtotal'];
+    protected $fillable = ['invoice', 'id_customer', 'name_customer', 'phone_customer', 'address_customer', 'subtotal','session_id'];
     public $timestamps = true;
 
     //Set Status
