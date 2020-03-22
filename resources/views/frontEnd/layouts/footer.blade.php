@@ -1,22 +1,50 @@
-<footer id="footer"><!--Footer-->
+<footer class="footer-distributed">
+ 
+<div class="footer-left">
 
-    <div class="footer-widget">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/Remarkable.png')}}" style="margin-left: 200px; margin-right: 200px;" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<h3>Remar<span>kable</span></h3>
 
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <p class="pull-left">Copyright © 2020</p>
-            </div>
-        </div>
-    </div>
-</footer><!--/Footer-->
+<p class="footer-links">
+<a href="{{url('/')}}">Home</a>
+·
+<a href="{{url('/list-products')}}">Products</a>
+·
+<a href="{{url('/myaccount')}}">Account</a>
+·
+<a href="{{url('/viewcart')}}">Cart</a>
+</p>
+
+<p class="footer-company-name">remarkable &copy; 2020</p>
+</div>
+
+<div class="footer-center">
+
+<div>
+<i class="fa fa-map-marker"></i>
+<p><span>SMK Assalaam</span> Bandung, Indonesia</p>
+</div>
+
+<!-- <div>
+<i class="fa fa-phone"></i>
+<p>+1 555 123456</p>
+</div> -->
+
+<div>
+<i class="fa fa-envelope"></i>
+<p><span> bagasbaldguy5@gmail.com</span></p>
+</div>
+
+</div>
+
+<div class="footer-right">
+
+<p class="footer-company-about">
+<span>About Remarkable</span>
+Web Dev Trick is a blog for web designers, graphic designers, web developers &amp; SEO Learner.
+</p>
+
+</div>
+
+</div>
+
+</footer>

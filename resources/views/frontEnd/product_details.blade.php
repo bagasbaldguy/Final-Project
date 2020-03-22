@@ -114,10 +114,10 @@
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <img src="{{url('/products/small',$item->image)}}" alt="" style="width: 150px;"/>
+                                                <a href="{{url('/product-detail',$item->id)}}"><img src="{{url('/products/small',$item->image)}}" alt="" style="width: 150px;"/>
                                                 <h2>{{$item->price}}</h2>
                                                 <p>{{$item->p_name}}</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <a href="{{url('/product-detail',$item->id)}}" class="btn btn-default add-to-cart">View Product</a>
                                             </div>
                                         </div>
                                     </div>
