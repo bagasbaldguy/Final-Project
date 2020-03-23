@@ -189,15 +189,18 @@
             snap.pay(data.snap_token, {
                 // Optional
                 onSuccess: function (result) {
-                    location.reload();
+                    window.location.href = '/vieworder';
+                    // location.reload();
                 },
                 // Optional
                 onPending: function (result) {
-                    location.reload();
+                    window.location.href = '/vieworder';
+                    // location.reload();
                 },
                 // Optional
                 onError: function (result) {
-                    location.reload();
+                    window.location.href = '/vieworder';
+                    // location.reload();
                 }
             });
         });
