@@ -25,7 +25,7 @@ class CartController extends Controller
         Session::forget('discount_amount_price');
         Session::forget('coupon_code');
         if($inputToCart['size']==""){
-            return back()->with('message','Please select Size');
+            return back()->with('message','Please select Audio Quality');
         }else{
             $stockAvailable=DB::table('product_att')->select('stock','sku')->where(['products_id'=>$inputToCart['products_id'],
                 'price'=>$inputToCart['price']])->first();
@@ -42,6 +42,7 @@ class CartController extends Controller
                 $inputToCart['product_code']=$stockAvailable->sku;
                 $count_duplicateItems=Cart_model::where(['products_id'=>$inputToCart['products_id'],
                     'product_color'=>$inputToCart['product_color'],
+                    'product_weight'=>$inputToCart['product_weight'],
                     'size'=>$inputToCart['size']])->count();
                 if($count_duplicateItems>0){
                     return back()->with('message','This Item Added already');

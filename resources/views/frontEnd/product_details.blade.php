@@ -41,13 +41,15 @@
                     <input type="hidden" name="product_name" value="{{$detail_product->p_name}}">
                     <input type="hidden" name="product_code" value="{{$detail_product->p_code}}">
                     <input type="hidden" name="product_color" value="{{$detail_product->p_color}}">
+                    <input type="hidden" name="product_weight" value="{{$detail_product->weight}}">
                     <input type="hidden" name="price" value="{{$detail_product->price}}" id="dynamicPriceInput">
                     <div class="product-information" style="padding: 27px; margin-right: 100px; border-color: orange;"><!--/product-information-->
                         <h2>{{$detail_product->p_name}}</h2>
                         <p>Code ID: {{$detail_product->p_code}}</p>
+                        <p>Weight: {{$detail_product->weight}} (g)</p>
                         <span>
                             <select name="size" id="idSize" class="form-control">
-                        	<option value="">Select Size</option>
+                        	<option value="">Select Audio Quality</option>
                             @foreach($detail_product->attributes as $attrs)
                                 <option value="{{$detail_product->id}}-{{$attrs->size}}">{{$attrs->size}}</option>
                             @endforeach

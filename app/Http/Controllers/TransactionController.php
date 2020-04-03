@@ -30,7 +30,7 @@ class TransactionController extends Controller
         \DB::transaction(function () {
             
             //get data cart
-            $cart = DB::select('SELECT products_id,product_name,product_code,product_color,size,price,quantity,user_email FROM cart');
+            $cart = DB::select('SELECT products_id,product_name,product_code,product_color,product_weight,size,price,quantity,user_email FROM cart');
             
             //get session 
             $session_id=Session::get('session_id');

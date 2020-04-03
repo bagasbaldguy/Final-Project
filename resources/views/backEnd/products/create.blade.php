@@ -57,6 +57,13 @@
                         </div>
                     </div>
                     <div class="control-group">
+                        <label for="weight" class="control-label">Weight</label>
+                        <div class="controls{{$errors->has('weight')?' has-error':''}}">
+                            <input type="text" name="weight" id="weight" value="{{old('weight')}}" required="required" style="width: 400px;">
+                            <span class="text-danger">{{$errors->first('weight')}}</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
                         <label for="description" class="control-label">Description</label>
                         <div class="controls{{$errors->has('description')?' has-error':''}}">
                             <textarea class="textarea_editor span12" name="description" id="description" rows="6" placeholder="Product Description" style="width: 580px;">{{old('description')}}</textarea>

@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('p_name');
             $table->string('p_code');
             $table->string('p_color');
+            $table->float('weight');
             $table->text('description');
             $table->integer('price');
             $table->string('image');

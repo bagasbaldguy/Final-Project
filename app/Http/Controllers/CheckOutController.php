@@ -19,7 +19,11 @@ class CheckOutController extends Controller
         $user_login=User::where('id',Auth::id())->first();
         $courier = Courier::pluck('title', 'code');
         $provinsi = Provinsi::pluck('title', 'provinsi_id');
-        return view('checkout.index',compact('provinces','user_login','courier','provinsi'));
+        $session_id=Session::get('session_id');
+        $productsWeight=DB::table('cart')
+                            ->where('session_id',$session_id)
+                            ->sum('product_weight');
+        return view('checkout.index',compact('provinces','user_login','courier','provinsi','productsWeight'));
     }
 
      public function getKota($id)
