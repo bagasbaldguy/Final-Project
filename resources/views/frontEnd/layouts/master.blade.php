@@ -169,6 +169,19 @@
 </head><!--/head-->
 
 <body>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e874c7f35bcbb0c9aad73ca/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 @include('frontEnd.layouts.header')
 @section('slider')
     @include('frontEnd.layouts.slider')
@@ -177,7 +190,7 @@
 @include('frontEnd.layouts.footer')
 <script src="{{asset('frontEnd/js/jquery.js')}}"></script>
 <script src="{{asset('frontEnd/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('frontEnd/js/jquery.scrollUp.min.js')}}"></script>
+<!-- <script src="{{asset('frontEnd/js/jquery.scrollUp.min.js')}}"></script> -->
 <script src="{{asset('frontEnd/js/price-range.js')}}"></script>
 <script src="{{asset('frontEnd/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('frontEnd/js/main.js')}}"></script>
