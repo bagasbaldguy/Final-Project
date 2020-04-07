@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\OrdersMidTrans;
+use App\ProductAtrr_model;
 use Veritrans_Config;
 use Veritrans_Snap;
 use Veritrans_Notification;
@@ -89,6 +90,12 @@ class TransactionController extends Controller
             $snapToken = Veritrans_Snap::getSnapToken($payload);
             $order->snap_token = $snapToken;
             $order->save();
+
+            //Decrement Stock Base on Order
+            foreach ($cart as $item) {
+                $product = ProductAtrr_model::find($item->products_id);
+                $product->decrement('stock', $item->quantity);
+            }
 
             // Beri response snap token
             $this->response['snap_token'] = $snapToken;
