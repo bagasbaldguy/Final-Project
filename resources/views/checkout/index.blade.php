@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="berat" class="form-control" id="berat" value="{{ $productsWeight }}" placeholder="Berat (g)" value="" required readonly>
+                            <input type="text" name="berat" class="form-control" id="berat" value="{{ $total_weight }}" placeholder="Berat (g)" value="" required readonly>
                         </div>
 
                     </div><!--/sign up form-->
