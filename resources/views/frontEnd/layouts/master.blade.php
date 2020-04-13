@@ -169,6 +169,7 @@
 </head><!--/head-->
 
 <body>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -182,6 +183,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
 @include('frontEnd.layouts.header')
 @section('slider')
     @include('frontEnd.layouts.slider')
@@ -227,6 +229,7 @@ s0.parentNode.insertBefore(s1,s0);
     });
 </script>
 
+<!-- Raja Ongkir Script -->
 <script>
     $.ajaxSetup({
         headers: {
@@ -291,7 +294,9 @@ $('select[name="provinsi_asal"]').on('change', function(){
         }
     });
 </script>
+<!-- Raja Ongkir Script -->
 
+<!-- disqus script -->
 <script>
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -310,6 +315,11 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!-- disqus script -->
+
+<!-- Google analytics -->
+@include('backEnd.analytics')
+<!-- Google analytics -->
 
 @yield('js')
 </body>
